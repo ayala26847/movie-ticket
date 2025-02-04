@@ -1,18 +1,14 @@
 import React from 'react';
-import {useSelector} from "react-redux";
-import {RootState} from "../store/store.ts";
+import {Showtime} from "../store/showtimesSlice.ts";
 interface TicketSummaryProps {
     selectedSeats: string[];
-    showtimeId: string;
+    showtime: Showtime;
 }
-const TicketSummary: React.FC<TicketSummaryProps> = ({selectedSeats, showtimeId}) => {
-
-    const showTimes = useSelector((state: RootState) => state.showtimes);
-    const currentShowTime = showTimes.find(s => s.id === showtimeId);
+const TicketSummary: React.FC<TicketSummaryProps> = ({selectedSeats, showtime}) => {
 
     const summary = {
-    movie: currentShowTime?.theater,
-    showtime: currentShowTime?.startTime,
+    movie: showtime?.theater,
+    showtime: showtime?.startTime,
     seats: selectedSeats,
     totalPrice: 45 * selectedSeats.length,
   };

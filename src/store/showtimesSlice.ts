@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface Showtime {
+export interface Showtime {
   id: string;
   movieId: string;
   theater: string;
