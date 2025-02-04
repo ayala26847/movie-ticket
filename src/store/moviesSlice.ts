@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {Genre} from "../pages/consts.ts";
 
-interface Movie {
+export interface Movie {
   id: string;
   title: string;
-  genre: string;
+  genre: Genre;
   rating: number;
   duration: number;
   image:string;
@@ -13,7 +14,7 @@ interface Movie {
     {
       id: '1',
       title: 'Inception',
-      genre: 'Sci-Fi',
+      genre: Genre.Drama,
       rating: 4.8,
       duration: 148,
       image: 'https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg',
@@ -21,7 +22,7 @@ interface Movie {
     {
       id: '2',
       title: 'Interstellar',
-      genre: 'Sci-Fi',
+      genre: Genre.Action,
       rating: 4.6,
       duration: 169,
       image: 'https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg',
@@ -29,8 +30,8 @@ interface Movie {
     {
         id: '3',
         title: 'Star',
-        genre: 'Sci-Fi',
-        rating: 4.7,
+        genre: Genre.Horror,
+        rating: 2,
         duration: 120,
         image: 'https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg',
       },
