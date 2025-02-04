@@ -7,7 +7,6 @@ interface Movie {
   rating: number;
   duration: number;
   image:string;
-  occupiedSeats: string[];
 }
 
   const initialState: Movie[] = [
@@ -18,7 +17,6 @@ interface Movie {
       rating: 4.8,
       duration: 148,
       image: 'https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg',
-      occupiedSeats: []
     },
     {
       id: '2',
@@ -27,7 +25,6 @@ interface Movie {
       rating: 4.6,
       duration: 169,
       image: 'https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg',
-      occupiedSeats: []
     },
     {
         id: '3',
@@ -36,7 +33,6 @@ interface Movie {
         rating: 4.7,
         duration: 120,
         image: 'https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg',
-        occupiedSeats: []
       },
   ];
   
@@ -47,7 +43,9 @@ const moviesSlice = createSlice({
   reducers: {
     setMovies(state, action: PayloadAction<Movie[]>) {
       return action.payload;
+
     },
+
   },
 });
 
